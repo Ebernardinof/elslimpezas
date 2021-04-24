@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-export default function () {
+ShowServices() {
   const classes = useStyles();
   const checked = useWindowPosition("header");
   return (
@@ -24,3 +24,4 @@ export default function () {
     </div>
   );
 }
+export default ShowService
