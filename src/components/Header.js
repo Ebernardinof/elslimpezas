@@ -86,11 +86,6 @@ export default function Header() {
             Welcome to <br />
             Els<span className={classes.colorText}> Limpezas</span>
           </h1>
-          <Scroll to="place-to-visit" smooth={true}>
-            <IconButton>
-              <ExpandMoreIcon className={classes.goDown} />
-            </IconButton>
-          </Scroll>
         </div>
         <Scroll to="place-to-visit" smooth={true}>
           <IconButton>
