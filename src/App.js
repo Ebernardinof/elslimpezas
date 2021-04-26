@@ -1,14 +1,21 @@
 import { CssBaseline } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import Contact from "./components/Contact";
 import Header from "./components/Header";
 import Services from "./components/Services";
+import createBrowserHistory from "./history";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",
-    backgroundImage: `url(${process.env.PUBLIC_URL + "/assets/banner.png"})`,
+    backgroundImage: `url(${
+      process.env.PUBLIC_URL + "/assets/resizeimage.png"
+    })`,
+    backgroundColor: "#BEBF33",
     backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
+    alignItems: "center",
+    justifyContent: "center",
+    // backgroundSize: "cover",
   },
 }));
 function App() {
@@ -16,9 +23,10 @@ function App() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      {/* <header className="App-header">Els Limpezas</header> */}
       <Header />
       <Services />
+      <Contact />
+      {/* <header className="App-header">Els Limpezas</header> */}
     </div>
   );
 }
