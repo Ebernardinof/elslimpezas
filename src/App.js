@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Contact from "./components/Contact";
 import Header from "./components/Header";
 import Services from "./components/Services";
-import createBrowserHistory from "./history";
 
 const useStyles = makeStyles((theme) => ({
   root: {

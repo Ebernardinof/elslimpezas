@@ -5,7 +5,6 @@ import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import TextField from "@material-ui/core/TextField";
 import useWindowPosition from "../hook/useWindowPosition";
-import { Input } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,28 +26,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function encode(data) {
-  console.log(data);
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-}
-
 export default function Contact() {
-  const [state, setState] = React.useState({});
   const classes = useStyles();
-  const checked = useWindowPosition("place-to-visit");
-
-  const handleChange = (e) => {
-    setState({ ...state, [e.target.name]: e.target.value });
-  };
+  // const checked = useWindowPosition("place-to-visit");
 
   return (
     <div className={classes.root} id="contactForm">
       <h1>Contact</h1>
-      <form name="contact" method="post" data-netlify="true" onSubmit="submit">
+      <form
+        name="contact v1"
+        method="post"
+        data-netlify="true"
+        onSubmit="submit"
+      >
         {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="form-name" value="contact v1" />
         {/* <p hidden>
           <label>
             Don’t fill this out:{" "}
@@ -60,7 +52,7 @@ export default function Contact() {
             <InputLabel htmlFor="name">Name</InputLabel>
             <OutlinedInput
               id="name"
-              onChange={handleChange}
+              // onChange={handleChange}
               label="Your Name"
               name="name"
               type="text"
@@ -70,7 +62,7 @@ export default function Contact() {
             <InputLabel htmlFor="email">Email</InputLabel>
             <OutlinedInput
               id="email"
-              onChange={handleChange}
+              // onChange={handleChange}
               label="Your Email"
               name="email"
               type="email"
