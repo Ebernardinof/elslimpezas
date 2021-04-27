@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
   title: {
-    color: "#fff",
+    color: "#ffffff",
     fontSize: "4.5rem",
   },
   goDown: {
