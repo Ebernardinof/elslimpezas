@@ -33,12 +33,18 @@ code {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: textclip 4s linear infinite;
+  animation: textclip 10s linear infinite;
   display: inline-block;
 }
 
 @keyframes textclip {
   to {
     background-position: 200% center;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .elsTitle {
+    margin-top: 320px;
+    animation: textclip infinite 10s linear;
   }
 }

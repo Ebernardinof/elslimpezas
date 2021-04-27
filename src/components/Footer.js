@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { IconButton, Toolbar } from "@material-ui/core";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
@@ -17,17 +17,20 @@ const useStyles = makeStyles({
     // color: "#335C49",
     color: "#fffff",
   },
+  rights: {
+    textAlign: "center",
+  },
 });
 
 const Footer = () => {
   const classes = useStyles();
-  const [checked, setChecked] = useState(false);
-  useEffect(() => {
-    setChecked(true);
-  }, []);
+  //   const [checked, setChecked] = useState(false);
+  //   useEffect(() => {
+  //     setChecked(true);
+  //   }, []);
 
   return (
-    <div id="header">
+    <div id="footer">
       <Toolbar className={classes.footerbarWrapper}>
         <IconButton className={classes.footerbar}>
           <Scroll to="header" smooth={true}>
@@ -46,6 +49,10 @@ const Footer = () => {
           </Scroll>
         </IconButton>
       </Toolbar>
+      <div className={classes.rights}>
+        2021 © All rights reserved Els-Serviços de Limpezas | Powered by
+        Ebernardino - tixE
+      </div>
     </div>
   );
 };

@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundRepeat: "no-repeat",
     backgroundSize: "contain",
   },
+  container: {
+    textAlign: "center",
+  },
 }));
 function App() {
   const classes = useStyles();
@@ -23,6 +26,24 @@ function App() {
       <CssBaseline />
       <Header />
       <Services />
+      <div className={classes.container}>
+        <br />
+        <h2>Prestamos Serviços em:</h2>
+        <h4> A Els Limpezas está presente na seguintes áreas:</h4>
+        <p>Margem Sul do Tejo:</p>
+        <div>
+          Almada, Seixal, Fernão Ferro, Quinta do Conde, Setúbal, Palmela,
+          <br />
+          Azeitão, Aroeira, Costa da Caparica, Sobreda, Charneca da Caparica,
+          <br />
+          Corroios, Sta. Marta, Amora, Fogueteiro, Cruz de Pau, <br />
+          Torre da Marinha, Barreiro, Montijo, Pinhal Novo, Alcochete,
+          Verdizela,
+          <br />
+          Belverde, Marisol, Arrentela.
+          <br />
+        </div>
+      </div>
       <Contact />
       <Footer />
     </div>

@@ -1,25 +1,26 @@
 const places = [
   {
-    title: "Passar Ferro",
+    title: "Limpezas Mudanças",
     description:
-      "The Maldives are home to some of the world's most ravishing islands, but it's the sea, which truly makes these islands shine. Luminous aquamarine waters with a crystal clarity lap upon these dazzling white shores, which barely peek above the Indian Ocean.",
-    imageUrl: process.env.PUBLIC_URL + "/assets/iron.jpg",
-    time: 1500,
+      "Limpeza pré e pós-mudança. Se vai vai mudar de casa esta é a limpeza que necessita. Limpamos tudo ao pormenor desde o interior dos armários ao patamar de entrada.",
+    imageUrl: process.env.PUBLIC_URL + "/assets/mudancas.jpg",
+    time: 1000,
   },
   {
-    title: "Limpeza Geral",
+    title: "Limpeza de Manutenção",
     description:
-      "Shaped like a giant sombrero, this lush volcanic island stars in countless South Pacific fantasies. The focal point and best asset of this tropical beauty is its ravishing lagoon in technicolor turquoise. Fish, turtles, sharks, and rays swim in the clear waters.",
+      "Limpeza de manutenção da sua casa: diário, semanal, bissemanal, quinzenal ou o que necessitar (varrer, aspirar, limpar e lavar). Exclui limpeza de interiores de armários e eletrodomésticos.  ",
     imageUrl: process.env.PUBLIC_URL + "/assets/kitchen.jpg",
-    time: 1500,
+    time: 1000,
   },
   {
-    title: "Mudanças",
+    title: "Limpezas Comerciais",
     description:
-      "Shaped like a giant sombrero, this lush volcanic island stars in countless South Pacific fantasies. The focal point and best asset of this tropical beauty is its ravishing lagoon in technicolor turquoise. Fish, turtles, sharks, and rays swim in the clear waters.",
-    imageUrl: process.env.PUBLIC_URL + "/assets/house.jpg",
-    time: 1500,
+      "Limpezas realizadas em horário pós-laboral, sem interferir com o seu trabalho. Aspiração, remoção da sujidade e desinfeção, de acessos privados e públicos, corredores, secretárias e equipamentos. ",
+    imageUrl: process.env.PUBLIC_URL + "/assets/escritorio.jpg",
+    time: 1000,
   },
 ];
 
 export default places;
+// Exclui limpezas profundas, limpezas de humidade, limpezas pós-obra, limpeza de interiores de armários e eletrodomésticos, confeção de refeições, limpeza de paredes, tetos e portas, limpeza de zonas de animais de estimação e cuidado de plantas, limpeza de calcário, gordura, bolores ou sujidade entranhada.

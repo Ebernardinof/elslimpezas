@@ -18,8 +18,9 @@ const useStyles = makeStyles((theme) => ({
     background: "none",
   },
   appbarWrapper: {
-    width: "95%",
+    width: "100%",
     margin: "0 auto",
+    color: "#ffffff",
   },
   appbarTitle: {
     flexGrow: "1",
@@ -30,8 +31,8 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "2rem",
   },
   colorText: {
-    // color: "#335C49",
-    color: "#fffff",
+    color: "#335C49",
+    // color: "#ffffff",
   },
   container: {
     textAlign: "center",
@@ -68,9 +69,7 @@ export default function Header() {
                 src="/assets/els_logo.png"
                 className={classes.icon}
               />
-              <p className={classes.colorText}>
-                <span className={classes.colorText}> Els Limpezas </span>
-              </p>
+              <span className={classes.colorText}></span>
             </IconButton>
           </Scroll>{" "}
           <IconButton>
