@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import OutlinedInput from "@material-ui/core/OutlinedInput";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import TextField from "@material-ui/core/TextField";
 import useWindowPosition from "../hook/useWindowPosition";
+import { Button, Card, Container } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,70 +30,40 @@ const useStyles = makeStyles((theme) => ({
 export default function Contact() {
   const classes = useStyles();
   // const checked = useWindowPosition("place-to-visit");
+  const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    if (window.location.search.includes("success=true")) {
+      setSuccess(true);
+    }
+  }, []);
 
   return (
-    <div className={classes.root} id="contactForm">
-      <h1>Contact</h1>
-      <form
-        name="contact v1"
-        method="post"
-        data-netlify="true"
-        onSubmit="submit"
-      >
-        {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-        <input type="hidden" name="form-name" value="contact v1" />
-        {/* <p hidden>
-          <label>
-            Don’t fill this out:{" "}
-            <input name="bot-field" onChange={handleChange} />
-          </label>
-        </p> */}
-        <div>
-          <label htmlFor="name">Nome </label>
-          <br />
-          <input name="name" type="text" id="name" />
-          <br />
-          <label htmlFor="email">Email </label>
-          <br />
-          <input name="email" type="email" id="email" />
-          <br />
-          <label htmlFor="message">Mensagem </label>
-          <br />
-          <textarea name="message" />
-          {/* <FormControl variant="outlined">
-            <InputLabel htmlFor="name">Name</InputLabel>
-            <OutlinedInput
-              id="name"
-              // onChange={handleChange}
-              label="Your Name"
-              name="name"
-              type="text"
-            />
-          </FormControl>
-          <FormControl variant="outlined">
-            <InputLabel htmlFor="email">Email</InputLabel>
-            <OutlinedInput
-              id="email"
-              // onChange={handleChange}
-              label="Your Email"
-              name="email"
-              type="email"
-            />
-          </FormControl>
+    <Container maxWidth="md">
+      <h2>CONTACT</h2>
+      {success && <p style={{ color: "green" }}>Thanks for your message! </p>}
+      <Card>
+        <form
+          name="contact"
+          method="POST"
+          action="/contact/?success=true"
+          data-netlify="true"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <TextField id="standard-basic" label="name" name="name" /> <br />
+          <TextField id="standard-basic" label="email" name="email" /> <br />
           <TextField
-            id="message"
-            label="Message"
             multiline
-            rows={4}
-            variant="outlined"
+            id="standard-multiline-static"
+            label="message"
             name="message"
-          /> */}
-        </div>
-
-        <p>
-          <button type="submit">Send it!</button>
-        </p>
-      </form>
-    </div>
+          />
+          <br />
+          <div>
+            <Button type="submit">Send</Button>
+          </div>
+        </form>
+      </Card>
+    </Container>
   );
 }
