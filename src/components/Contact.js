@@ -30,18 +30,18 @@ export default function Contact() {
   // const checked = useWindowPosition("place-to-visit");
   const [success, setSuccess] = useState(false);
 
-  useEffect(() => {
-    if (window.location.search.includes("success=true")) {
-      setSuccess(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (window.location.search.includes("success=true")) {
+  //     setSuccess(true);
+  //   }
+  // }, []);
 
   return (
     <Container maxWidth="md" className={classes.contactForm} id="contactForm">
       <h2>CONTACT</h2>
-      {success && (
+      {/* {success && (
         <h3 style={{ color: "#335C49" }}>Thanks for your message! </h3>
-      )}
+      )} */}
       <Card>
         <form
           name="contact"
