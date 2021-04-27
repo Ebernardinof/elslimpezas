@@ -69,7 +69,7 @@ export default function Header() {
             </Scroll>
           </IconButton>
           <IconButton>
-            <Scroll to="contact" smooth={true}>
+            <Scroll to="contactForm" smooth={true}>
               Contact
             </Scroll>
           </IconButton>

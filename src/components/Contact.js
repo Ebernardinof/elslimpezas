@@ -48,7 +48,18 @@ export default function Contact() {
           </label>
         </p> */}
         <div>
-          <FormControl variant="outlined">
+          <label htmlFor="name">Nome </label>
+          <br />
+          <input name="name" type="text" id="name" />
+          <br />
+          <label htmlFor="email">Email </label>
+          <br />
+          <input name="email" type="email" id="email" />
+          <br />
+          <label htmlFor="message">Mensagem </label>
+          <br />
+          <textarea name="message" />
+          {/* <FormControl variant="outlined">
             <InputLabel htmlFor="name">Name</InputLabel>
             <OutlinedInput
               id="name"
@@ -75,7 +86,7 @@ export default function Contact() {
             rows={4}
             variant="outlined"
             name="message"
-          />
+          /> */}
         </div>
 
         <p>
