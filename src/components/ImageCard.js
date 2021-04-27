@@ -38,13 +38,13 @@ export default function ImageCard({ place, checked }) {
         <CardMedia
           className={classes.media}
           image={place.imageUrl}
-          title="Contemplative Reptile"
+          title="Services"
         />
         <CardContent>
           <Typography
             gutterBottom
             variant="h5"
-            component="h1"
+            component="h2"
             className={classes.title}
           >
             {place.title}

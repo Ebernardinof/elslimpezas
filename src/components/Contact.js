@@ -30,23 +30,23 @@ export default function Contact() {
   // const checked = useWindowPosition("place-to-visit");
   const [success, setSuccess] = useState(false);
 
-  // useEffect(() => {
-  //   if (window.location.search.includes("success=true")) {
-  //     setSuccess(true);
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (window.location.search.includes("success=true")) {
+      setSuccess(true);
+    }
+  }, []);
 
   return (
     <Container maxWidth="md" className={classes.contactForm} id="contactForm">
-      <h2>CONTACT</h2>
-      {/* {success && (
+      <h2>CONTACTO</h2>
+      {success && (
         <h3 style={{ color: "#335C49" }}>Thanks for your message! </h3>
-      )} */}
+      )}
       <Card>
         <form
           name="contact"
           method="POST"
-          action="/contact/ "
+          action="/contact-thanks"
           data-netlify="true"
         >
           <input type="hidden" name="form-name" value="contact" />
@@ -80,7 +80,7 @@ export default function Contact() {
               className={classes.button}
               endIcon={<Icon>send</Icon>}
             >
-              Send
+              Enviar
             </Button>
           </div>
         </form>

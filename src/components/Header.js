@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { AppBar, IconButton, Toolbar, Collapse } from "@material-ui/core";
-import SortIcon from "@material-ui/icons/Sort";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Link as Scroll } from "react-scroll";
+import Avatar from "@material-ui/core/Avatar";
+import "../index.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: "100vh",
+    height: "90vh",
     fontFamily: "Nunito",
   },
   appbar: {
@@ -22,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   appbarTitle: {
     flexGrow: "1",
+    color: "#ffffff",
   },
   icon: {
     color: "#fff",
@@ -36,11 +38,17 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     color: "#ffffff",
-    fontSize: "4.5rem",
+    fontSize: " 5rem",
+  },
+  colorTitle: {
+    // color: "#335C49",
+    color: "#fff",
+    fontSize: " 5rem",
   },
   goDown: {
-    color: "#ffffff",
-    fontSize: "4rem",
+    color:
+      " linear-gradient(to right, #335c49 10%,#2e9a68 50%,#bebf33 40%, #ffffff 20%)",
+    fontSize: "6rem",
   },
 }));
 export default function Header() {
@@ -54,23 +62,33 @@ export default function Header() {
       <AppBar className={classes.appbar} elevation={0}>
         <Toolbar className={classes.appbarWrapper}>
           <Scroll to="header" smooth={true} className={classes.appbarTitle}>
-            <h1 className={classes.appbarTitle}>
-              Els<span className={classes.colorText}> Limpezas</span>
-            </h1>
+            <IconButton>
+              <Avatar
+                alt="Logo"
+                src="/assets/els_logo.png"
+                className={classes.icon}
+              />
+              <p className={classes.colorText}>
+                <span className={classes.colorText}> Els Limpezas </span>
+              </p>
+            </IconButton>
           </Scroll>{" "}
           <IconButton>
-            <Scroll to="header" smooth={true}>
-              <SortIcon className={classes.icon} />
-            </Scroll>{" "}
-          </IconButton>
-          <IconButton>
-            <Scroll to="place-to-visit" smooth={true}>
-              Services
+            <Scroll
+              to="services"
+              smooth={true}
+              className={classes.appbarWrapper}
+            >
+              Serviços
             </Scroll>
           </IconButton>
           <IconButton>
-            <Scroll to="contactForm" smooth={true}>
-              Contact
+            <Scroll
+              to="contactForm"
+              smooth={true}
+              className={classes.appbarWrapper}
+            >
+              Contacto
             </Scroll>
           </IconButton>
         </Toolbar>
@@ -79,19 +97,18 @@ export default function Header() {
       <Collapse
         in={checked}
         {...(checked ? { timeout: 1000 } : {})}
-        collapsedHeight={150}
+        collapsedHeight={50}
       >
         <div className={classes.container}>
           <h1 className={classes.title}>
-            Welcome to <br />
-            Els<span className={classes.colorText}> Limpezas</span>
+            <span className="elsTitle">Els Limpezas</span>
           </h1>
+          <Scroll to="services" smooth={true}>
+            <IconButton>
+              <ExpandMoreIcon className={classes.goDown} />
+            </IconButton>
+          </Scroll>
         </div>
-        <Scroll to="place-to-visit" smooth={true}>
-          <IconButton>
-            <ExpandMoreIcon className={classes.goDown} />
-          </IconButton>
-        </Scroll>
       </Collapse>
     </div>
   );

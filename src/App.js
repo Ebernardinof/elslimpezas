@@ -1,20 +1,19 @@
 import { CssBaseline } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Services from "./components/Services";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    backgroundColor: "#BEBF33",
     minHeight: "100vh",
     backgroundImage: `url(${
-      process.env.PUBLIC_URL + "/assets/resizeimage.png"
+      process.env.PUBLIC_URL + "/assets/logo_transparent.png"
     })`,
-    backgroundColor: "#BEBF33",
     backgroundRepeat: "no-repeat",
-    alignItems: "center",
-    justifyContent: "center",
-    // backgroundSize: "cover",
+    backgroundSize: "contain",
   },
 }));
 function App() {
@@ -25,7 +24,7 @@ function App() {
       <Header />
       <Services />
       <Contact />
-      {/* <header className="App-header">Els Limpezas</header> */}
+      <Footer />
     </div>
   );
 }
