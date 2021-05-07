@@ -4,6 +4,9 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Services from "./components/Services";
+import { useEffect } from "react";
+import ReactGA from "react-ga";
+ReactGA.initialize("271669041");
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,8 +22,14 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
 }));
+
 function App() {
   const classes = useStyles();
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
   return (
     <div className={classes.root}>
       <CssBaseline />
